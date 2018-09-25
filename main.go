@@ -11,7 +11,7 @@ import (
 var logger *log.Logger
 
 func main() {
-	logger = log.New(os.Stdout, "f", log.LstdFlags)
+	logger = log.New(os.Stdout, "", log.LstdFlags)
 
 	if err := run(); err != nil {
 		fmt.Fprintf(os.Stderr, "error: %v\n", err)
