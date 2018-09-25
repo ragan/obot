@@ -7,5 +7,5 @@ build: fmt
 run: build
 	./obot
 run-test: build
-	./obot -p 10 < .test/test_file
+	./obot -p 10 < .testing/test_file
 
