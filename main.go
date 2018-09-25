@@ -4,8 +4,8 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"os"
 	"log"
+	"os"
 )
 
 var logger *log.Logger
