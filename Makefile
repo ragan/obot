@@ -1,6 +1,8 @@
 GOPATH := $(GOPATH)
 
-build:
+fmt:
+	go fmt
+build: fmt
 	GOPATH=$(shell pwd); go build
 run: build
 	./obot
