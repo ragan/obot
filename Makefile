@@ -6,6 +6,6 @@ build: fmt
 	GOPATH=$(shell pwd); go build
 run: build
 	./obot
-run-test: build
+test-run: build
 	./obot -p 10 < .testing/test_file
 
