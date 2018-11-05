@@ -10,7 +10,8 @@ Use `obot -help` to print available options.
 # Providing user information
 Obot can be used by:
 
-Passing key,secret with `echo`
+Passing key,secret using `echo`
+
 `echo "mi19WitPVubhsGHC2z43M8sY,mbcfenp1kRNIGShv785JACi3E1y8HV4sjoNA51-9KrFjCrfW" | obot`
 
 or
