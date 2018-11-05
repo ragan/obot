@@ -12,7 +12,11 @@ Obot can be used by:
 
 Passing key,secret with `echo`
 `echo "mi19WitPVubhsGHC2z43M8sY,mbcfenp1kRNIGShv785JACi3E1y8HV4sjoNA51-9KrFjCrfW" | obot`
+
 or
+
 `obot < some_data_file.csv`
+
 or by parameter
+
 `obot -file some_data_file.csv`
