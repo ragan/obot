@@ -44,6 +44,7 @@ var (
 	orderQty int
 	// Price
 	price int
+	prod bool
 )
 
 type cmdFun func(c bitmex.Client) (o *bitmex.Order, e *bitmex.Error)
@@ -62,6 +63,9 @@ func main() {
 	flag.StringVar(&symbol, "sym", "", "Symbol for placing orders")
 	flag.IntVar(&orderQty, "qty", 0, "Selected order quantity")
 	flag.IntVar(&price, "price", 0, "Selected order price")
+
+	flag.BoolVar(&prod, "prod", false, "Using production environment when " +
+		"selected")
 
 	flag.Parse()
 
@@ -121,7 +125,12 @@ func run(val string, command int) error {
 func do(en []entry, command int) error {
 	var clients = make([]bitmex.Client, 0)
 	for _, e := range en {
-		clients = append(clients, bitmex.NewTestNet(e.apiKey, e.apiSecret))
+		if prod {
+			clients = append(clients, bitmex.NewProduction(e.apiKey,
+				e.apiSecret))
+		} else {
+			clients = append(clients, bitmex.NewTestNet(e.apiKey, e.apiSecret))
+		}
 	}
 
 	if command == CmdNoCmd {
